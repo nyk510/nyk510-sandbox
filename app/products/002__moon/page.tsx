@@ -24,7 +24,7 @@ type MoonPhaseProps = {
     size?: number;
 };
 
-export function MoonPhase({ moonAge, size = 100 }: MoonPhaseProps) {
+function MoonPhase({ moonAge, size = 100 }: MoonPhaseProps) {
     const synodicMonth = 29.530588853;             // 朔望月
     const phaseRatio = (moonAge % synodicMonth) / synodicMonth; // 0–1
 
@@ -72,6 +72,7 @@ export function MoonPhase({ moonAge, size = 100 }: MoonPhaseProps) {
         </div>
     );
 }
+
 export default function Moon() {
     const now = new Date()
     const [year, setYear] = useState(getYear(now))
